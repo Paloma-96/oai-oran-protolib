@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+/* this file contains the protobuf enums definitions*/
+
+
+/* These are all the message types that can be encoded */
+enum RAN_message_type{
+    SUBSCRIPTION = 1;
+    INDICATION_REQUEST = 2;
+    INDICATION_RESPONSE = 3;
+    CONTROL = 4;
+    SOMETHING_ELSE = 5;
+} 
+
+/* These are the target ran parameters for the read/write functions */
+enum RAN_parameter{
+    GNB_ID = 1;
+    SOMETHING = 2;
+}

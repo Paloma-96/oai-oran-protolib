@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+/* RAN SUBMESSAGES */
+
+/* This is a single entry of a map containing a target parameter and its read/write value */
+message RAN_param_map_entry{
+    required RAN_parameter key = 1;
+    required string value = 2;
+}
+
+/* Indication requests contain a list of target ran parameters */
+message RAN_indication_request{
+    repeated RAN_parameter target_params = 1;
+}
+
+/* indication response contains a map of the requested parameters with the corresponding read value */ 
+message RAN_indication_response{
+    repeated RAN_param_map_entry param_map = 1;
+}
+
+/* A control indication request contains a map of the tagret parameters and their write values */
+message RAN_control_request{
+    repeated RAN_param_map_entry target_param_map = 1;
+}
