@@ -14,16 +14,17 @@ enum RAN_parameter{
     GNB_ID = 1;
     SOMETHING = 2;
     UE_LIST = 3;
-    UE_TOA_LIST = 4;
+    TOA_LIST = 4;
 }
 
-message RAN_param_map_entry{
-    required RAN_parameter key = 1;
-    oneof value{
-        int64 int64_value  = 2;
-        string string_value = 3;
-        ue_list_m ue_list = 4;
-        ue_toa_list_m ue_toa_list = 5;
+/* MASTER RAN MESSAGE */
+
+message RAN_message{
+    required RAN_message_type msg_type = 1;
+    oneof payload{
+        RAN_indication_request ran_indication_request = 2;
+        RAN_indication_response ran_indication_response = 3;
+        RAN_control_request ran_control_request = 4;
     }
 }
 
@@ -40,14 +41,13 @@ message RAN_control_request{
     repeated RAN_param_map_entry target_param_map = 1;
 }
 
-/* MASTER RAN MESSAGE */
-
-message RAN_message{
-    required RAN_message_type msg_type = 1;
-    oneof payload{
-        RAN_indication_request ran_indication_request = 2;
-        RAN_indication_response ran_indication_response = 3;
-        RAN_control_request ran_control_request = 4;
+message RAN_param_map_entry{
+    required RAN_parameter key = 1;
+    oneof value{
+        int64 int64_value  = 2;
+        string string_value = 3;
+        ue_list_m ue_list = 4;
+        toa_m toa = 5;
     }
 }
 
@@ -65,11 +65,8 @@ message ue_list_m{
   repeated ue_info_m ue_info = 2;
 }
 
-message ue_toa {
-   required string ue = 1;
-   required string toa = 2;
-}
 
-message ue_toa_list_m {
-   repeated ue_toa ue_toa_values = 1;
+message toa_m {
+   required int32 rnti = 1;
+   required float toa_val = 2;
 }

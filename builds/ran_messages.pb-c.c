@@ -7,49 +7,49 @@
 #endif
 
 #include "ran_messages.pb-c.h"
-void   ran_param_map_entry__init
-                     (RANParamMapEntry         *message)
+void   ran_message__init
+                     (RANMessage         *message)
 {
-  static const RANParamMapEntry init_value = RAN_PARAM_MAP_ENTRY__INIT;
+  static const RANMessage init_value = RAN_MESSAGE__INIT;
   *message = init_value;
 }
-size_t ran_param_map_entry__get_packed_size
-                     (const RANParamMapEntry *message)
+size_t ran_message__get_packed_size
+                     (const RANMessage *message)
 {
-  assert(message->base.descriptor == &ran_param_map_entry__descriptor);
+  assert(message->base.descriptor == &ran_message__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t ran_param_map_entry__pack
-                     (const RANParamMapEntry *message,
+size_t ran_message__pack
+                     (const RANMessage *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &ran_param_map_entry__descriptor);
+  assert(message->base.descriptor == &ran_message__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t ran_param_map_entry__pack_to_buffer
-                     (const RANParamMapEntry *message,
+size_t ran_message__pack_to_buffer
+                     (const RANMessage *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &ran_param_map_entry__descriptor);
+  assert(message->base.descriptor == &ran_message__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-RANParamMapEntry *
-       ran_param_map_entry__unpack
+RANMessage *
+       ran_message__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (RANParamMapEntry *)
-     protobuf_c_message_unpack (&ran_param_map_entry__descriptor,
+  return (RANMessage *)
+     protobuf_c_message_unpack (&ran_message__descriptor,
                                 allocator, len, data);
 }
-void   ran_param_map_entry__free_unpacked
-                     (RANParamMapEntry *message,
+void   ran_message__free_unpacked
+                     (RANMessage *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &ran_param_map_entry__descriptor);
+  assert(message->base.descriptor == &ran_message__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   ran_indication_request__init
@@ -187,49 +187,49 @@ void   ran_control_request__free_unpacked
   assert(message->base.descriptor == &ran_control_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   ran_message__init
-                     (RANMessage         *message)
+void   ran_param_map_entry__init
+                     (RANParamMapEntry         *message)
 {
-  static const RANMessage init_value = RAN_MESSAGE__INIT;
+  static const RANParamMapEntry init_value = RAN_PARAM_MAP_ENTRY__INIT;
   *message = init_value;
 }
-size_t ran_message__get_packed_size
-                     (const RANMessage *message)
+size_t ran_param_map_entry__get_packed_size
+                     (const RANParamMapEntry *message)
 {
-  assert(message->base.descriptor == &ran_message__descriptor);
+  assert(message->base.descriptor == &ran_param_map_entry__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t ran_message__pack
-                     (const RANMessage *message,
+size_t ran_param_map_entry__pack
+                     (const RANParamMapEntry *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &ran_message__descriptor);
+  assert(message->base.descriptor == &ran_param_map_entry__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t ran_message__pack_to_buffer
-                     (const RANMessage *message,
+size_t ran_param_map_entry__pack_to_buffer
+                     (const RANParamMapEntry *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &ran_message__descriptor);
+  assert(message->base.descriptor == &ran_param_map_entry__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-RANMessage *
-       ran_message__unpack
+RANParamMapEntry *
+       ran_param_map_entry__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (RANMessage *)
-     protobuf_c_message_unpack (&ran_message__descriptor,
+  return (RANParamMapEntry *)
+     protobuf_c_message_unpack (&ran_param_map_entry__descriptor,
                                 allocator, len, data);
 }
-void   ran_message__free_unpacked
-                     (RANMessage *message,
+void   ran_param_map_entry__free_unpacked
+                     (RANParamMapEntry *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &ran_message__descriptor);
+  assert(message->base.descriptor == &ran_param_map_entry__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   ue_info_m__init
@@ -322,81 +322,126 @@ void   ue_list_m__free_unpacked
   assert(message->base.descriptor == &ue_list_m__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-static const ProtobufCFieldDescriptor ran_param_map_entry__field_descriptors[4] =
+void   toa_m__init
+                     (ToaM         *message)
+{
+  static const ToaM init_value = TOA_M__INIT;
+  *message = init_value;
+}
+size_t toa_m__get_packed_size
+                     (const ToaM *message)
+{
+  assert(message->base.descriptor == &toa_m__descriptor);
+  return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
+}
+size_t toa_m__pack
+                     (const ToaM *message,
+                      uint8_t       *out)
+{
+  assert(message->base.descriptor == &toa_m__descriptor);
+  return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
+}
+size_t toa_m__pack_to_buffer
+                     (const ToaM *message,
+                      ProtobufCBuffer *buffer)
+{
+  assert(message->base.descriptor == &toa_m__descriptor);
+  return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
+}
+ToaM *
+       toa_m__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data)
+{
+  return (ToaM *)
+     protobuf_c_message_unpack (&toa_m__descriptor,
+                                allocator, len, data);
+}
+void   toa_m__free_unpacked
+                     (ToaM *message,
+                      ProtobufCAllocator *allocator)
+{
+  if(!message)
+    return;
+  assert(message->base.descriptor == &toa_m__descriptor);
+  protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
+}
+static const ProtobufCFieldDescriptor ran_message__field_descriptors[4] =
 {
   {
-    "key",
+    "msg_type",
     1,
     PROTOBUF_C_LABEL_REQUIRED,
     PROTOBUF_C_TYPE_ENUM,
     0,   /* quantifier_offset */
-    offsetof(RANParamMapEntry, key),
-    &ran_parameter__descriptor,
+    offsetof(RANMessage, msg_type),
+    &ran_message_type__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "int64_value",
+    "ran_indication_request",
     2,
     PROTOBUF_C_LABEL_OPTIONAL,
-    PROTOBUF_C_TYPE_INT64,
-    offsetof(RANParamMapEntry, value_case),
-    offsetof(RANParamMapEntry, int64_value),
-    NULL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    offsetof(RANMessage, payload_case),
+    offsetof(RANMessage, ran_indication_request),
+    &ran_indication_request__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "string_value",
+    "ran_indication_response",
     3,
     PROTOBUF_C_LABEL_OPTIONAL,
-    PROTOBUF_C_TYPE_STRING,
-    offsetof(RANParamMapEntry, value_case),
-    offsetof(RANParamMapEntry, string_value),
-    NULL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    offsetof(RANMessage, payload_case),
+    offsetof(RANMessage, ran_indication_response),
+    &ran_indication_response__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "ue_list",
+    "ran_control_request",
     4,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(RANParamMapEntry, value_case),
-    offsetof(RANParamMapEntry, ue_list),
-    &ue_list_m__descriptor,
+    offsetof(RANMessage, payload_case),
+    offsetof(RANMessage, ran_control_request),
+    &ran_control_request__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned ran_param_map_entry__field_indices_by_name[] = {
-  1,   /* field[1] = int64_value */
-  0,   /* field[0] = key */
-  2,   /* field[2] = string_value */
-  3,   /* field[3] = ue_list */
+static const unsigned ran_message__field_indices_by_name[] = {
+  0,   /* field[0] = msg_type */
+  3,   /* field[3] = ran_control_request */
+  1,   /* field[1] = ran_indication_request */
+  2,   /* field[2] = ran_indication_response */
 };
-static const ProtobufCIntRange ran_param_map_entry__number_ranges[1 + 1] =
+static const ProtobufCIntRange ran_message__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 4 }
 };
-const ProtobufCMessageDescriptor ran_param_map_entry__descriptor =
+const ProtobufCMessageDescriptor ran_message__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "RAN_param_map_entry",
-  "RANParamMapEntry",
-  "RANParamMapEntry",
+  "RAN_message",
+  "RANMessage",
+  "RANMessage",
   "",
-  sizeof(RANParamMapEntry),
+  sizeof(RANMessage),
   4,
-  ran_param_map_entry__field_descriptors,
-  ran_param_map_entry__field_indices_by_name,
-  1,  ran_param_map_entry__number_ranges,
-  (ProtobufCMessageInit) ran_param_map_entry__init,
+  ran_message__field_descriptors,
+  ran_message__field_indices_by_name,
+  1,  ran_message__number_ranges,
+  (ProtobufCMessageInit) ran_message__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
 static const ProtobufCFieldDescriptor ran_indication_request__field_descriptors[1] =
@@ -513,81 +558,94 @@ const ProtobufCMessageDescriptor ran_control_request__descriptor =
   (ProtobufCMessageInit) ran_control_request__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor ran_message__field_descriptors[4] =
+static const ProtobufCFieldDescriptor ran_param_map_entry__field_descriptors[5] =
 {
   {
-    "msg_type",
+    "key",
     1,
     PROTOBUF_C_LABEL_REQUIRED,
     PROTOBUF_C_TYPE_ENUM,
     0,   /* quantifier_offset */
-    offsetof(RANMessage, msg_type),
-    &ran_message_type__descriptor,
+    offsetof(RANParamMapEntry, key),
+    &ran_parameter__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "ran_indication_request",
+    "int64_value",
     2,
     PROTOBUF_C_LABEL_OPTIONAL,
-    PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(RANMessage, payload_case),
-    offsetof(RANMessage, ran_indication_request),
-    &ran_indication_request__descriptor,
+    PROTOBUF_C_TYPE_INT64,
+    offsetof(RANParamMapEntry, value_case),
+    offsetof(RANParamMapEntry, int64_value),
+    NULL,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "ran_indication_response",
+    "string_value",
     3,
     PROTOBUF_C_LABEL_OPTIONAL,
-    PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(RANMessage, payload_case),
-    offsetof(RANMessage, ran_indication_response),
-    &ran_indication_response__descriptor,
+    PROTOBUF_C_TYPE_STRING,
+    offsetof(RANParamMapEntry, value_case),
+    offsetof(RANParamMapEntry, string_value),
+    NULL,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "ran_control_request",
+    "ue_list",
     4,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(RANMessage, payload_case),
-    offsetof(RANMessage, ran_control_request),
-    &ran_control_request__descriptor,
+    offsetof(RANParamMapEntry, value_case),
+    offsetof(RANParamMapEntry, ue_list),
+    &ue_list_m__descriptor,
+    NULL,
+    0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "toa",
+    5,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    offsetof(RANParamMapEntry, value_case),
+    offsetof(RANParamMapEntry, toa),
+    &toa_m__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned ran_message__field_indices_by_name[] = {
-  0,   /* field[0] = msg_type */
-  3,   /* field[3] = ran_control_request */
-  1,   /* field[1] = ran_indication_request */
-  2,   /* field[2] = ran_indication_response */
+static const unsigned ran_param_map_entry__field_indices_by_name[] = {
+  1,   /* field[1] = int64_value */
+  0,   /* field[0] = key */
+  2,   /* field[2] = string_value */
+  4,   /* field[4] = toa */
+  3,   /* field[3] = ue_list */
 };
-static const ProtobufCIntRange ran_message__number_ranges[1 + 1] =
+static const ProtobufCIntRange ran_param_map_entry__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 4 }
+  { 0, 5 }
 };
-const ProtobufCMessageDescriptor ran_message__descriptor =
+const ProtobufCMessageDescriptor ran_param_map_entry__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "RAN_message",
-  "RANMessage",
-  "RANMessage",
+  "RAN_param_map_entry",
+  "RANParamMapEntry",
+  "RANParamMapEntry",
   "",
-  sizeof(RANMessage),
-  4,
-  ran_message__field_descriptors,
-  ran_message__field_indices_by_name,
-  1,  ran_message__number_ranges,
-  (ProtobufCMessageInit) ran_message__init,
+  sizeof(RANParamMapEntry),
+  5,
+  ran_param_map_entry__field_descriptors,
+  ran_param_map_entry__field_indices_by_name,
+  1,  ran_param_map_entry__number_ranges,
+  (ProtobufCMessageInit) ran_param_map_entry__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
 static const ProtobufCFieldDescriptor ue_info_m__field_descriptors[6] =
@@ -744,6 +802,57 @@ const ProtobufCMessageDescriptor ue_list_m__descriptor =
   (ProtobufCMessageInit) ue_list_m__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
+static const ProtobufCFieldDescriptor toa_m__field_descriptors[2] =
+{
+  {
+    "rnti",
+    1,
+    PROTOBUF_C_LABEL_REQUIRED,
+    PROTOBUF_C_TYPE_INT32,
+    0,   /* quantifier_offset */
+    offsetof(ToaM, rnti),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "toa_val",
+    2,
+    PROTOBUF_C_LABEL_REQUIRED,
+    PROTOBUF_C_TYPE_FLOAT,
+    0,   /* quantifier_offset */
+    offsetof(ToaM, toa_val),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+};
+static const unsigned toa_m__field_indices_by_name[] = {
+  0,   /* field[0] = rnti */
+  1,   /* field[1] = toa_val */
+};
+static const ProtobufCIntRange toa_m__number_ranges[1 + 1] =
+{
+  { 1, 0 },
+  { 0, 2 }
+};
+const ProtobufCMessageDescriptor toa_m__descriptor =
+{
+  PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "toa_m",
+  "ToaM",
+  "ToaM",
+  "",
+  sizeof(ToaM),
+  2,
+  toa_m__field_descriptors,
+  toa_m__field_indices_by_name,
+  1,  toa_m__number_ranges,
+  (ProtobufCMessageInit) toa_m__init,
+  NULL,NULL,NULL    /* reserved[123] */
+};
 static const ProtobufCEnumValue ran_message_type__enum_values_by_number[5] =
 {
   { "SUBSCRIPTION", "RAN_MESSAGE_TYPE__SUBSCRIPTION", 1 },
@@ -778,19 +887,21 @@ const ProtobufCEnumDescriptor ran_message_type__descriptor =
   ran_message_type__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCEnumValue ran_parameter__enum_values_by_number[3] =
+static const ProtobufCEnumValue ran_parameter__enum_values_by_number[4] =
 {
   { "GNB_ID", "RAN_PARAMETER__GNB_ID", 1 },
   { "SOMETHING", "RAN_PARAMETER__SOMETHING", 2 },
   { "UE_LIST", "RAN_PARAMETER__UE_LIST", 3 },
+  { "TOA_LIST", "RAN_PARAMETER__TOA_LIST", 4 },
 };
 static const ProtobufCIntRange ran_parameter__value_ranges[] = {
-{1, 0},{0, 3}
+{1, 0},{0, 4}
 };
-static const ProtobufCEnumValueIndex ran_parameter__enum_values_by_name[3] =
+static const ProtobufCEnumValueIndex ran_parameter__enum_values_by_name[4] =
 {
   { "GNB_ID", 0 },
   { "SOMETHING", 1 },
+  { "TOA_LIST", 3 },
   { "UE_LIST", 2 },
 };
 const ProtobufCEnumDescriptor ran_parameter__descriptor =
@@ -800,9 +911,9 @@ const ProtobufCEnumDescriptor ran_parameter__descriptor =
   "RAN_parameter",
   "RANParameter",
   "",
-  3,
+  4,
   ran_parameter__enum_values_by_number,
-  3,
+  4,
   ran_parameter__enum_values_by_name,
   1,
   ran_parameter__value_ranges,
