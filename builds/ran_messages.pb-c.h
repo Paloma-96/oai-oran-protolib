@@ -168,10 +168,11 @@ struct  _ToaM
   ProtobufCMessage base;
   int32_t rnti;
   float toa_val;
+  float snr;
 };
 #define TOA_M__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&toa_m__descriptor) \
-    , 0, 0 }
+    , 0, 0, 0 }
 
 
 /* RANMessage methods */

@@ -802,7 +802,7 @@ const ProtobufCMessageDescriptor ue_list_m__descriptor =
   (ProtobufCMessageInit) ue_list_m__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor toa_m__field_descriptors[2] =
+static const ProtobufCFieldDescriptor toa_m__field_descriptors[3] =
 {
   {
     "rnti",
@@ -828,15 +828,28 @@ static const ProtobufCFieldDescriptor toa_m__field_descriptors[2] =
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "snr",
+    3,
+    PROTOBUF_C_LABEL_REQUIRED,
+    PROTOBUF_C_TYPE_FLOAT,
+    0,   /* quantifier_offset */
+    offsetof(ToaM, snr),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned toa_m__field_indices_by_name[] = {
   0,   /* field[0] = rnti */
+  2,   /* field[2] = snr */
   1,   /* field[1] = toa_val */
 };
 static const ProtobufCIntRange toa_m__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 2 }
+  { 0, 3 }
 };
 const ProtobufCMessageDescriptor toa_m__descriptor =
 {
@@ -846,7 +859,7 @@ const ProtobufCMessageDescriptor toa_m__descriptor =
   "ToaM",
   "",
   sizeof(ToaM),
-  2,
+  3,
   toa_m__field_descriptors,
   toa_m__field_indices_by_name,
   1,  toa_m__number_ranges,

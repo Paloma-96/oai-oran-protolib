@@ -69,4 +69,5 @@ message ue_list_m{
 message toa_m {
    required int32 rnti = 1;
    required float toa_val = 2;
+   required float snr = 3;
 }
