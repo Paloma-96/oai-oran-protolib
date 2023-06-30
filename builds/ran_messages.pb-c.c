@@ -819,9 +819,9 @@ static const ProtobufCFieldDescriptor toa_m__field_descriptors[3] =
   {
     "toa_val",
     2,
-    PROTOBUF_C_LABEL_REQUIRED,
-    PROTOBUF_C_TYPE_FLOAT,
-    0,   /* quantifier_offset */
+    PROTOBUF_C_LABEL_REPEATED,
+    PROTOBUF_C_TYPE_INT32,
+    offsetof(ToaM, n_toa_val),
     offsetof(ToaM, toa_val),
     NULL,
     NULL,
@@ -831,9 +831,9 @@ static const ProtobufCFieldDescriptor toa_m__field_descriptors[3] =
   {
     "snr",
     3,
-    PROTOBUF_C_LABEL_REQUIRED,
-    PROTOBUF_C_TYPE_FLOAT,
-    0,   /* quantifier_offset */
+    PROTOBUF_C_LABEL_REPEATED,
+    PROTOBUF_C_TYPE_INT32,
+    offsetof(ToaM, n_snr),
     offsetof(ToaM, snr),
     NULL,
     NULL,
